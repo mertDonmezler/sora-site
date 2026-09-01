@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# NOT: kvkk.html ve cerez-politikasi.html sayfalarinda <meta robots=noindex> var.
+# Disallow EKLEMEYIN: engellenen sayfayi tarayici indiremez, dolayisiyla noindex'i de
+# goremez ve URL yine de indekslenebilir. Ikisini birlikte kullanmak celiskidir.
+
+Sitemap: https://soradijital.com/sitemap.xml
