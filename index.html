@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0c0c11">
 <title>SORA — Fikrin yolu Sora'dan geçer.</title>
-<meta name="description" content="İstanbul'da bir kreatif ajans. Markaların sosyal medyasını yönetiyor, tasarımını yapıyor, filmini çekiyoruz.">
+<meta name="description" content="İstanbul'da bir kreatif ajansız. Markaların sosyal medyasını yönetiyor, tasarımını yapıyor, filmini çekiyoruz.">
 <meta property="og:title" content="SORA — Fikrin yolu Sora'dan geçer.">
 <meta property="og:description" content="Markaların sosyal medyasını yönetiyor, tasarımını yapıyor, filmini çekiyoruz.">
 <meta property="og:type" content="website">
@@ -25,8 +25,9 @@
 <link rel="preload" href="assets/fonts/Sora-normal-100-800-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/HankenGrotesk-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/HankenGrotesk-normal-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/fonts.css?v=40b4d604">
-<link rel="stylesheet" href="assets/style.css?v=c0bed545">
+<link rel="preload" href="assets/fonts/Fraunces-italic-300-600-tr.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css?v=4e229690">
+<link rel="stylesheet" href="assets/style.css?v=0f290a89">
 <script>/* Acilis emniyeti: site.js yuklenemese ya da patlasa bile sayfa giyinsin.
    Gezinme anina baglidir. Normal acilisla YARISMAZ: yalnizca mutlak zamanlayicilar
    var, load olayina bagli erken kaldirma YOK (o yarisi kazaninca koreografi capasi
@@ -35,9 +36,15 @@
 if(h.classList.contains("yuklendi"))return;
 h.classList.add("yuklendi");
 if(window.__soraIntro===undefined)window.__soraIntro=performance.now()};
+/* site icinden gelis (depolama yok, yalniz referrer; ilk boyamadan once): sayac ve glif
+   cizimi her gezinmede bastan oynamaz, perde kisa bir bekleyisle kalkar (bkz. site.js) */
+try{if(document.referrer&&new URL(document.referrer).origin===location.origin)h.classList.add("icgelis")}catch(e){}
 setTimeout(a,2600);
-setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200);})();</script>
-<noscript><style>.curtain{display:none}.rise,.hero .kicker,.hero-foot{opacity:1;transform:none}.perde{clip-path:none}.work .cover{clip-path:none}.yatay{height:auto}.yatay-sabit{position:static;height:auto}.ray{flex-direction:column}.manifesto .kelime{opacity:1;filter:none;transform:none}</style></noscript>
+setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200);
+/* site.js hic inmezse (404, cevrimdisi) 3,2 sn beklenmez: kaynak hatasi yakalama evresinde gelir.
+   __soraCanli betigin EN SONUNDA verilir; betik inip yarida patlarsa yukaridaki zamanlayici yakalar. */
+addEventListener("error",function(e){var s=e.target;if(s&&s.tagName==="SCRIPT"&&/\/site\.js/.test(s.src)&&!window.__soraCanli){a();h.classList.add("acil")}},true);})();</script>
+<noscript><style>.curtain{display:none}.rise,.hero .kicker,.hero-foot{opacity:1;transform:none}.work .cover{clip-path:none}.yatay{height:auto}.yatay-sabit{position:static;height:auto}.ray{flex-direction:column}.ray .work,.ray .son{flex:none}.ray-bar{display:none}.manifesto .kelime{opacity:1;filter:none;transform:none}#f .gonder{display:none}</style></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"SORA",
 "description":"İstanbul merkezli kreatif ajans: sosyal medya yönetimi, içerik üretimi, tasarım, video prodüksiyonu ve kampanya.",
@@ -53,8 +60,6 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
 
 <a class="skip" href="#icerik">İçeriğe geç</a>
 
-<div class="cetvel" aria-hidden="true">SORA — GÖK ATLASI · 41.10°K 29.00°D · MMXXVI</div>
-
 <nav>
   <div class="nav-in">
     <a class="wordmark" href="#top"><svg class="mark" aria-hidden="true" focusable="false"><use href="#sora-mark" xlink:href="#sora-mark"/></svg>SORA<span>.</span></a>
@@ -69,12 +74,12 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
 </nav>
 
 <div class="menu-overlay" id="menu" role="dialog" aria-modal="true" aria-label="Site menüsü">
-  <a href="#ajans"><i aria-hidden="true">01</i>AJANS</a>
-  <a href="#isler"><i aria-hidden="true">02</i>İŞLER</a>
-  <a href="#hizmetler"><i aria-hidden="true">03</i>HİZMETLER</a>
-  <a href="#iletisim"><i aria-hidden="true">04</i>İLETİŞİM</a>
+  <a href="#ajans">AJANS</a>
+  <a href="#isler">İŞLER</a>
+  <a href="#hizmetler">HİZMETLER</a>
+  <a href="#iletisim">İLETİŞİM</a>
   <button class="menu-kapat" type="button">Menüyü kapat</button>
-  <div class="menu-meta"><span>İSTANBUL — <b class="saat" style="color:inherit">--:--</b></span><span>41.10°K · 29.00°D</span></div>
+  <div class="menu-meta"><span>İSTANBUL — <b class="saat" style="color:inherit">--:--</b></span><span>41,10° K · 29,00° D</span></div>
 </div>
 
 <!-- hero tam genişlik: gökyüzü canvas'ı ekranı uçtan uca kaplar, metin .shell ile hizada kalır -->
@@ -92,6 +97,7 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
       <p class="sub">Markaların sosyal medyasını yönetiyor, tasarımını yapıyor, filmini çekiyoruz.</p>
       <div class="foot-sag">
         <span class="konum">İSTANBUL · <b class="saat">--:--</b></span>
+        <script>/* ilk boyamadan once (site.js yavas agda gec gelse de yer tutucu gorunmez): UTC+3, bkz. site.js */document.querySelectorAll('.saat').forEach(function(e){e.textContent=new Date(Date.now()+108e5).toISOString().slice(11,16)})</script>
         <span class="scroll-hint">KAYDIR</span>
       </div>
     </div>
@@ -112,8 +118,8 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
     <h2 class="giant perde">AJANS</h2>
     <div class="sag">
       <p class="manifesto">Sora, gökyüzü demek. Tavanı olmayan tek yer. Fikirlere de öyle bakıyoruz.</p>
-      <p class="dim satir">Sosyal medya yönetimini, içerik üretimini, tasarımı, video prodüksiyonunu ve kampanyayı tek ekipte topluyoruz. Fikri yazanlar çekimde de sahada da işin başında duruyor. Böylece fikir bir elden ötekine geçerken sulanmıyor, iş de hızlı çıkıyor.</p>
-      <p class="dim satir">İstanbul'dayız. Ekibimiz strateji, tasarım, prodüksiyon ve dijital iletişim disiplinlerinden geliyor. Spor kulüplerinden tüketici markalarına, farklı sektörlerle çalışıyoruz.</p>
+      <p class="dim satir">Sosyal medya yönetimini, içerik üretimini, tasarımı, video prodüksiyonunu ve kampanyaları tek ekipte topluyoruz. Fikri yazanlar çekimde de sahada da işin başında duruyor. Böylece fikir bir elden ötekine geçerken sulanmıyor, iş de hızlı çıkıyor.</p>
+      <p class="dim satir">İstanbul'dayız. Ekibimiz strateji, tasarım, prodüksiyon ve dijital iletişim disiplinlerinden geliyor.</p>
     </div>
   </div>
 </section>
@@ -125,26 +131,26 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
       <div class="ray">
 
         <!-- Görseller gelene kadar tipografik kapaklar; her .cover'a background-image eklenecek -->
-        <a class="work" href="isler/sariyer-spor-kulubu.html" data-cursor="Gör">
-          <div class="cover"><span class="ghost" aria-hidden="true">S</span><span class="plaka" aria-hidden="true">SORA · 01</span><span class="plaka-koor" aria-hidden="true">α 15:08 · δ −32°</span><span class="cover-name">Sarıyer Spor Kulübü</span></div>
+        <a class="work" href="isler/sariyer-spor-kulubu.html">
+          <div class="cover" data-cursor="Gör"><span class="ghost" aria-hidden="true">S</span><span class="plaka" aria-hidden="true">SORA · 01</span><span class="plaka-koor" aria-hidden="true">α 15:08 · δ −32°</span><span class="cover-name">Sarıyer Spor Kulübü</span></div>
           <div class="meta">
-            <span class="what">Transfer duyurusundan maç gününe, kulübün sosyal medya dilini baştan kurduk.</span>
+            <span class="what">Kulübün sosyal medya dilini baştan kurduk.</span>
             <span class="tags">SOSYAL MEDYA · VİDEO · SPOR</span>
           </div>
         </a>
 
-        <a class="work" href="isler/petihtiyac.html" data-cursor="Gör">
-          <div class="cover"><span class="ghost" aria-hidden="true">P</span><span class="plaka" aria-hidden="true">SORA · 02</span><span class="plaka-koor" aria-hidden="true">α 17:16 · δ +53°</span><span class="cover-name">Petihtiyaç</span></div>
+        <a class="work" href="isler/petihtiyac.html">
+          <div class="cover" data-cursor="Gör"><span class="ghost" aria-hidden="true">P</span><span class="plaka" aria-hidden="true">SORA · 02</span><span class="plaka-koor" aria-hidden="true">α 17:16 · δ +53°</span><span class="cover-name">Petihtiyaç</span></div>
           <div class="meta">
-            <span class="what">Tanıtım filmini fikrinden son kurgusuna kadar biz yaptık.</span>
+            <span class="what">Senaryosunu yazdığımız tanıtım filmini çekip kurguladık.</span>
             <span class="tags">TANITIM · PRODÜKSİYON · ÇEKİM</span>
           </div>
         </a>
 
-        <a class="work" href="isler/spicelith.html" data-cursor="Gör">
-          <div class="cover"><span class="ghost" aria-hidden="true">S</span><span class="plaka" aria-hidden="true">SORA · 03</span><span class="plaka-koor" aria-hidden="true">α 13:09 · δ +41°</span><span class="cover-name">Spicelith</span></div>
+        <a class="work" href="isler/spicelith.html">
+          <div class="cover" data-cursor="Gör"><span class="ghost" aria-hidden="true">S</span><span class="plaka" aria-hidden="true">SORA · 03</span><span class="plaka-koor" aria-hidden="true">α 13:09 · δ +41°</span><span class="cover-name">Spicelith</span></div>
           <div class="meta">
-            <span class="what">Ürünü masada, yakın planda anlatan kısa video serisi.</span>
+            <span class="what">Ürünü bir masada, yakın plan çektik.</span>
             <span class="tags">VİDEO · İÇERİK</span>
           </div>
         </a>
@@ -166,25 +172,25 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
     <div class="svc-list">
       <div class="svc-row">
         <h3>STRATEJİ &amp; İÇERİK</h3>
-        <p>Sosyal medya stratejisi ve yönetimi ·&nbsp;Marka iletişimi ve kreatif danışmanlık ·&nbsp;Metin ve içerik üretimi</p>
+        <p>Sosyal medya stratejisi ve yönetimi&nbsp;· Marka iletişimi ve kreatif danışmanlık&nbsp;· Metin ve içerik üretimi</p>
       </div>
       <div class="svc-row">
         <h3>TASARIM</h3>
-        <p>Grafik tasarım ve görsel kimlik ·&nbsp;Web sitesi tasarımı ve geliştirme</p>
+        <p>Grafik tasarım ve görsel kimlik&nbsp;· Web sitesi tasarımı ve geliştirme</p>
       </div>
       <div class="svc-row">
         <h3>PRODÜKSİYON</h3>
-        <p>Fotoğraf ve video prodüksiyonu ·&nbsp;Reels, reklam filmi ve kurgu</p>
+        <p>Fotoğraf ve video prodüksiyonu&nbsp;· Reels, reklam filmi ve kurgu</p>
       </div>
       <div class="svc-row">
         <h3>KAMPANYA &amp; SAHA</h3>
-        <p>Yaratıcı kampanya fikirleri ·&nbsp;Dijital reklam kampanyaları ·&nbsp;Etkinlik, lansman ve saha iletişimi</p>
+        <p>Yaratıcı kampanya fikirleri&nbsp;· Dijital reklam kampanyaları&nbsp;· Etkinlik, lansman ve saha iletişimi</p>
       </div>
     </div>
 
     <div class="spor rise">
       <h3>Spor kulüpleri bizim sahamız.</h3>
-      <p>Maç günü, transfer, sponsor. Bir kulübün iletişimi sezon boyunca hiç durmaz; bu tempoyu ve taraftarla konuşmanın dilini biliyoruz. Sarıyer Spor Kulübü'yle bu dili birlikte kurduk.</p>
+      <p>Maç günü, transfer, sponsor. Bir kulübün iletişimi sezon boyunca hiç durmaz; bu tempoyu ve taraftarla konuşmanın dilini biliyoruz. Sarıyer Spor Kulübü'nün paylaşımlarını ve videolarını biz hazırladık.</p>
     </div>
 
     <!-- izinli logolar gelince isimler tek renk logo SVG'leriyle değişecek -->
@@ -200,11 +206,17 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
   <canvas class="gok" aria-hidden="true"></canvas>
   <div class="shell">
     <h2 class="giant perde">FİKRİNİ GETİR<em>.</em></h2>
-    <p class="dim satir">Kısaca anlat; 24 saat içinde dönelim.</p>
+    <p class="dim satir">Kısaca anlat, sana dönelim.</p>
     <div class="contact-grid">
       <!-- data-endpoint: Formspree / Web3Forms / Basin gibi statik-site form servisinin POST adresi.
-           Boşken mailto yedeği çalışır; doluysa fetch ile gönderilir ve tesekkurler.html açılır. -->
-      <form id="f" class="rise" data-endpoint="">
+           Boşken mailto yedeği çalışır; doluysa fetch ile gönderilir ve tesekkurler.html açılır.
+           method="post": JS'siz gönderimde ad, e-posta ve mesaj adres çubuğuna ve geçmişe düşmesin.
+           Uç nokta gelince aynı adresi action'a da yazın (servisin yönlendirme alanıyla
+           tesekkurler.html'e dönüş: Web3Forms redirect, Formspree _next); o zaman JS'siz yol da
+           gönderir ve aşağıdaki noscript notu ile head'deki #f .gonder gizlemesi kaldırılır.
+           Aynı anda acil modun eşleri de kalkar: .acil-not paragrafı ve style.css'teki
+           html.acil #f:not([data-hazir]) kuralları (işleyici bağlanmadıysa Gönder'i gizliyorlar). -->
+      <form id="f" class="rise" method="post" data-endpoint="">
         <div class="field">
           <label for="ad">ADIN</label>
           <input id="ad" name="ad" type="text" autocomplete="name" required>
@@ -214,28 +226,26 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
           <input id="ep" name="ep" type="email" autocomplete="email" required>
         </div>
         <div class="field">
-          <label for="msj">FİKRİN / İHTİYACIN</label>
+          <label for="msj">FİKRİN</label>
           <textarea id="msj" name="msj" rows="4" required></textarea>
         </div>
         <div class="kvkk-onay">
           <input id="kvkk" name="kvkk" type="checkbox" required>
-          <label for="kvkk">Kişisel verilerimin <a href="kvkk.html">KVKK Aydınlatma Metni</a> kapsamında işlenmesini kabul ediyorum.</label>
+          <label for="kvkk"><a href="kvkk.html">KVKK Aydınlatma Metni</a>'ni okudum.</label>
         </div>
         <button class="gonder mag" type="submit">Gönder</button>
+        <noscript><p class="form-durum">Form şimdilik yalnız JavaScript açıkken çalışıyor.</p></noscript>
+        <p class="form-durum acil-not">Form şu an çalışmıyor; sayfayı yenileyip tekrar dene.</p>
         <p id="form-durum" class="form-durum" role="status" aria-live="polite"></p>
       </form>
       <div class="direct rise">
-        <a class="daire mag" href="#ad" aria-label="Fikrini getir — forma git">
-          <svg viewBox="0 0 200 200" aria-hidden="true">
-            <defs><path id="dyol" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
-            <text><textPath href="#dyol" textLength="477">FİKRİNİ GETİR&nbsp;&nbsp;·&nbsp;&nbsp;SORA&nbsp;&nbsp;·&nbsp;&nbsp;FİKRİNİ GETİR&nbsp;&nbsp;·&nbsp;&nbsp;SORA&nbsp;&nbsp;·&nbsp;&nbsp;</textPath></text>
-          </svg>
-          <span class="ok" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M9.5 7H17v7.5"/></svg></span>
-        </a>
+        <!-- BİLGİ GELİNCE AÇ (bkz. YAYINA-ALMA.md, "İletişim" maddesi): satırları yorumdan çıkarıp doldurun,
+             .todo sınıfını ve "yakında" yazısını gerçek bağlantıyla değiştirin.
         <p>Formla uğraşmak istemezsen doğrudan yaz ya da ara.</p>
         <div class="row"><b>E-POSTA</b><span class="todo">yakında</span></div>
         <div class="row"><b>TELEFON</b><span class="todo">yakında</span></div>
         <div class="row"><b>INSTAGRAM</b><span class="todo">yakında</span></div>
+        -->
         <div class="row"><b>OFİS</b><span>İstanbul</span></div>
       </div>
     </div>
@@ -250,7 +260,7 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
 <footer>
 <svg class="foot-glyph" aria-hidden="true" focusable="false"><use href="#sora-mark" xlink:href="#sora-mark"/></svg>
   <div class="shell">
-    <a class="foot-mark" href="#top" aria-label="Sayfa başına dön">SORA<em>.</em></a>
+    <a class="foot-mark" href="#top" aria-label="SORA. Sayfa başına dön">SORA<em>.</em></a>
     <div class="foot-ust">
       <div class="foot-kolon">
         <b>MENÜ</b>
@@ -261,24 +271,27 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
       </div>
       <div class="foot-kolon">
         <b>İLETİŞİM</b>
+        <span>Form üzerinden</span>
+        <!-- BİLGİ GELİNCE AÇ: "Form üzerinden" satırının yerine
         <span class="todo">E-posta — yakında</span>
         <span class="todo">Telefon — yakında</span>
         <span class="todo">Instagram — yakında</span>
+        -->
       </div>
       <div class="foot-kolon">
         <b>OFİS</b>
         <span>İstanbul</span>
-        <span>Yerel saat — <b class="saat" style="letter-spacing:0;display:inline;color:var(--muted);font-size:16px;margin:0">--:--</b></span>
+        <span>Yerel saat — <b class="saat">--:--</b></span>
       </div>
     </div>
     <div class="foot-alt">
       <span>© 2026 SORA · Yapım: <a class="yapim" href="https://unholylabs.com" target="_blank" rel="noopener">Unholy Labs</a></span>
-      <span><a href="kvkk.html">KVKK Aydınlatma Metni</a> &nbsp;·&nbsp; <a href="cerez-politikasi.html">Çerez Politikası</a> &nbsp;·&nbsp; <a href="kullanim-kosullari.html">Kullanım Koşulları</a></span>
+      <span class="yasal"><a href="kvkk.html">KVKK Aydınlatma Metni</a><span class="ayrac" aria-hidden="true"> &nbsp;·&nbsp; </span><a href="cerez-politikasi.html">Çerez Politikası</a><span class="ayrac" aria-hidden="true"> &nbsp;·&nbsp; </span><a href="kullanim-kosullari.html">Kullanım Koşulları</a></span>
       <a class="yukari" href="#top">YUKARI ↑</a>
     </div>
   </div>
 </footer>
 
-<script src="assets/site.js?v=4270899d"></script>
+<script src="assets/site.js?v=a9fb385c"></script>
 </body>
 </html>

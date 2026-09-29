@@ -16,8 +16,8 @@
 <link rel="preload" href="assets/fonts/Sora-normal-100-800-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/HankenGrotesk-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/HankenGrotesk-normal-400-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/fonts.css?v=40b4d604">
-<link rel="stylesheet" href="assets/style.css?v=c0bed545">
+<link rel="stylesheet" href="assets/fonts.css?v=4e229690">
+<link rel="stylesheet" href="assets/style.css?v=0f290a89">
 <script>/* Acilis emniyeti: site.js yuklenemese ya da patlasa bile sayfa giyinsin.
    Gezinme anina baglidir. Normal acilisla YARISMAZ: yalnizca mutlak zamanlayicilar
    var, load olayina bagli erken kaldirma YOK (o yarisi kazaninca koreografi capasi
@@ -27,7 +27,10 @@ if(h.classList.contains("yuklendi"))return;
 h.classList.add("yuklendi");
 if(window.__soraIntro===undefined)window.__soraIntro=performance.now()};
 setTimeout(a,2600);
-setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200);})();</script>
+setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200);
+/* site.js hic inmezse (404, cevrimdisi) 3,2 sn beklenmez: kaynak hatasi yakalama evresinde gelir.
+   __soraCanli betigin EN SONUNDA verilir; betik inip yarida patlarsa yukaridaki zamanlayici yakalar. */
+addEventListener("error",function(e){var s=e.target;if(s&&s.tagName==="SCRIPT"&&/\/site\.js/.test(s.src)&&!window.__soraCanli){a();h.classList.add("acil")}},true);})();</script>
 </head>
 <body>
 <!-- marka isareti: bir kez tanimlanir, <use> ile kullanilir -->
@@ -49,17 +52,17 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
 </nav>
 
 <div class="menu-overlay" id="menu" role="dialog" aria-modal="true" aria-label="Site menüsü">
-  <a href="index.html#ajans"><i aria-hidden="true">01</i>AJANS</a>
-  <a href="index.html#isler"><i aria-hidden="true">02</i>İŞLER</a>
-  <a href="index.html#hizmetler"><i aria-hidden="true">03</i>HİZMETLER</a>
-  <a href="index.html#iletisim"><i aria-hidden="true">04</i>İLETİŞİM</a>
+  <a href="index.html#ajans">AJANS</a>
+  <a href="index.html#isler">İŞLER</a>
+  <a href="index.html#hizmetler">HİZMETLER</a>
+  <a href="index.html#iletisim">İLETİŞİM</a>
   <button class="menu-kapat" type="button">Menüyü kapat</button>
-  <div class="menu-meta"><span>İSTANBUL — <b class="saat" style="color:inherit">--:--</b></span><span>41.10°K · 29.00°D</span></div>
+  <div class="menu-meta"><span>İSTANBUL — <b class="saat" style="color:inherit">--:--</b></span><span>41,10° K · 29,00° D</span></div>
 </div>
 
 <main class="shell legal" id="icerik">
   <h1>Çerez Politikası</h1>
-  <p class="guncel">TASLAK — analiz aracı eklenirse bu sayfa ve çerez onay çubuğu birlikte güncellenecek. Son güncelleme: <span class="bosluk">[TARİH]</span></p>
+  <p class="guncel"><!-- TASLAK: analiz aracı eklenirse bu sayfa ve çerez onay çubuğu birlikte güncellenecek -->Son güncelleme: Eylül 2026</p>
 
   <h2>Sitemiz hangi çerezleri kullanıyor?</h2>
   <p>Bu site, olabildiğince az veri toplayacak şekilde tasarlandı. Mevcut hâliyle:</p>
@@ -70,7 +73,7 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
   </ul>
 
   <h2>Üçüncü taraf kaynaklar</h2>
-  <p>Yazı tipleri dahil tüm site kaynakları kendi sunucumuzdan servis edilir; sayfalarımız üçüncü taraf sunuculara istek göndermez ve üçüncü taraf çerezi bulundurmaz.</p>
+  <p>Yazı tipleri dahil bütün dosyalar, sitenin barındırıldığı sunucudan yüklenir; sayfalarımız başka sunuculara istek göndermez ve üçüncü taraf çerezi kullanmaz.</p>
 
   <h2>Çerez tercihlerinizi nasıl yönetirsiniz?</h2>
   <p>Tarayıcınızın ayarlarından çerezleri dilediğiniz zaman silebilir veya engelleyebilirsiniz. Analiz çerezleri devreye alınırsa, tercihinizi sitedeki çerez çubuğundan da yönetebileceksiniz.</p>
@@ -82,10 +85,10 @@ setTimeout(function(){if(!window.__soraCanli){a();h.classList.add("acil")}},3200
 <footer>
   <div class="shell foot-duz">
     <span>© 2026 SORA · Yapım: <a class="yapim" href="https://unholylabs.com" target="_blank" rel="noopener">Unholy Labs</a></span>
-    <span><a href="kvkk.html">KVKK Aydınlatma Metni</a> &nbsp;·&nbsp; <a href="cerez-politikasi.html">Çerez Politikası</a> &nbsp;·&nbsp; <a href="kullanim-kosullari.html">Kullanım Koşulları</a></span>
+    <span class="yasal"><a href="kvkk.html">KVKK Aydınlatma Metni</a><span class="ayrac" aria-hidden="true"> &nbsp;·&nbsp; </span><a href="cerez-politikasi.html">Çerez Politikası</a><span class="ayrac" aria-hidden="true"> &nbsp;·&nbsp; </span><a href="kullanim-kosullari.html">Kullanım Koşulları</a></span>
   </div>
 </footer>
 
-<script src="assets/site.js?v=4270899d"></script>
+<script src="assets/site.js?v=a9fb385c"></script>
 </body>
 </html>
