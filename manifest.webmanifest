@@ -4,8 +4,8 @@
   "description": "Fikrin yolu Sora'dan geçer.",
   "start_url": "index.html",
   "display": "browser",
-  "background_color": "#0c0c11",
-  "theme_color": "#0c0c11",
+  "background_color": "#0b0d1c",
+  "theme_color": "#0b0d1c",
   "icons": [
     {
       "src": "assets/ikon-192.png",
